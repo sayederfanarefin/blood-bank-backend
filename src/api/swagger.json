@@ -1,0 +1,3866 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "qemat",
+      "description": "qemat main backend endpoints testing",
+      "contact": {}
+    },
+    "host": "https://qemat-staging.herokuapp.com/api",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/auth/emailLogin": {
+        "post": {
+          "description": "Login user with email and password. This will check the email and password from firebase and get the idtoken from firebase and will store it in the system for further usage.",
+          "summary": "Email Login",
+          "tags": [
+            "Auth"
+          ],
+          "operationId": "AuthEmailLoginPost",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "email",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": "User registered email address"
+            },
+            {
+              "name": "password",
+              "in": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "description": "User registered pasword"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "object"
+              },
+              "examples": {
+                "application/json; charset=utf-8": "\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20va2VlbXV0LXVzZXJzIiwiYXVkIjoia2VlbXV0LXVzZXJzIiwiYXV0aF90aW1lIjoxNTU1NDA4Njk2LCJ1c2VyX2lkIjoiZkI2VnhadnpySWNEdWg3QWVVZWZUN2xRckFyMiIsInN1YiI6ImZCNlZ4WnZ6ckljRHVoN0FlVWVmVDdsUXJBcjIiLCJpYXQiOjE1NTU0MDg2OTYsImV4cCI6MTU1NTQxMjI5NiwiZW1haWwiOiJlcmZhbmpvcmRpc29uQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJlcmZhbmpvcmRpc29uQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.TYcWyOJNXNXqF6fpvnDjegZLyi_lTcScdWAOZSL3clpCxrA_YoPhJi_6J9bYsenV3Xc1i71S-Y8yNqFj4VJQdmpFvQ2u00FkWota79IaWmjpjWvMuyufm_Id58sQlSCHN0uNDpYqQ0ckLHUxV9_GWnEc4OtSQDhbDYtcu96E0u7T3JTBP_0zUT-8f62zcCCOiam60prZy597buKQ7BpBGiZq5kH4XrfRhavyRn_9rpDIjZKM7dA1XmX4DDdXnJ4dmK-c6R0CELxGPQvzis-bA847b8BHTDwf5uLdPqObzQH6gdIkJY1QPorVe92efTRrHLo6Vw9QMea3fUWJkcp3jg\""
+              },
+              "headers": {
+                "Server": {
+                  "type": "string",
+                  "default": "Cowboy"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                },
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-Dns-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-Xss-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "928"
+                },
+                "Etag": {
+                  "type": "string",
+                  "default": "W/\"3a0-E6j62ksn9kZc2xDliaVO10ttt6Y\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 16 Apr 2019 09:58:16 GMT"
+                },
+                "Via": {
+                  "type": "string",
+                  "default": "1.1 vegur"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Login failed!",
+                  "errors": []
+                }
+              }
+            }
+          },
+          "security": []
+        }
+      },
+      "/auth/tokenLogin": {
+        "post": {
+          "description": "Login with tokenid from firebase, this will check if it already exists in the system, if not it will use this to login to firebase, if the idtoken is correct it will store it in the system for further use",
+          "summary": "Token Login",
+          "tags": [
+            "Auth"
+          ],
+          "operationId": "AuthTokenLoginPost",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "idToken",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": "Id Token from firebase login"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "object"
+              },
+              "examples": {
+                "application/json; charset=utf-8": "\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20va2VlbXV0LXVzZXJzIiwiYXVkIjoia2VlbXV0LXVzZXJzIiwiYXV0aF90aW1lIjoxNTU1NDExMjUzLCJ1c2VyX2lkIjoiZkI2VnhadnpySWNEdWg3QWVVZWZUN2xRckFyMiIsInN1YiI6ImZCNlZ4WnZ6ckljRHVoN0FlVWVmVDdsUXJBcjIiLCJpYXQiOjE1NTU0MTEyNTksImV4cCI6MTU1NTQxNDg1OSwiZW1haWwiOiJlcmZhbmpvcmRpc29uQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJlcmZhbmpvcmRpc29uQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.oaWMHIJsRqgVv_BOeWu4ErYkWgLWycGLiCAp2GbnhqQ0VjR2PC1-Qwz3lPZiWbt-BBOfsfU6JISwqDD61pk2m4moujIpmOYE4TOS0xwmndd2i6AXTDaJ5EtnuQQM-KVJGOL_FFp7xrcbumaSz96GOhsDjuy4kzegLr9VFRERMm6HeioRa8x87ltTWr2Vm5OIOQ98Z9959gWOpuCdCX-2_-rinhycyZV7XZyOMUidqGjGw1fad7Q_guZhBG9D43WZmFw5HHC3zyvRv4RXkrx0OtBsYoDXuivIhczSJpSqqOMPMj1qttYudNA1F-B1h8ACLn93CiQlFj9XDlc3yX19Lw\""
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "928"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"3a0-5YrDPxRCR5PObwykcqrQZ92H9vI\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 16 Apr 2019 10:44:18 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Login failed!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/configuration/updateUserProfile": {
+        "post": {
+          "description": "Update userprofile by taking data from the user object",
+          "summary": "Update User Profile",
+          "tags": [
+            "Configuration"
+          ],
+          "operationId": "ConfigurationUpdateUserProfilePost",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "required": true,
+              "type": "string",
+              "description": ""
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/UpdateUserProfileRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/UpdateUserProfileSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "generatedMaps": [],
+                  "raw": []
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "29"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"1d-t5EiYesNts05xEOK/mFA7r5vfTE\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 16 Apr 2019 11:56:53 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Bad request, something went wrong",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/configuration/getUserProfile": {
+        "get": {
+          "description": "Get userprofile by using the token id",
+          "summary": "Get User Profile",
+          "tags": [
+            "Configuration"
+          ],
+          "operationId": "ConfigurationGetUserProfileGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/GetUserProfileSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "phoneNumber": "eraer",
+                  "email": "erfanjordison@gmail.com",
+                  "firstName": "Sayed Erfan",
+                  "age": 25,
+                  "sex": "Male",
+                  "carUse": "tesla",
+                  "numberOfCars": 23,
+                  "companyName": "eraer",
+                  "avatar": "eraer",
+                  "employeeId": "eraer",
+                  "distanceUnit": "eraer",
+                  "zoneId": "eraer",
+                  "currency": "eraer"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "259"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"103-96miY62knUK+EXxKlrMgWSzaBN0\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 16 Apr 2019 11:43:07 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/configuration/getUserProfile",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/configuration/createUserProfile": {
+        "post": {
+          "description": "Creates userprofile by taking data from the user object",
+          "summary": "Create User Profile",
+          "tags": [
+            "Configuration"
+          ],
+          "operationId": "ConfigurationCreateUserProfilePost",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "required": true,
+              "type": "string",
+              "description": ""
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/CreateUserProfileRequest"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/CreateUserProfilesuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "avatar": "eraer",
+                  "currency": "eraer",
+                  "distanceUnit": "eraer",
+                  "companyName": "eraer",
+                  "employeeId": "eraer",
+                  "zoneId": "eraer",
+                  "phoneNumber": "eraer",
+                  "user": {
+                    "id": "RukGTw1IXzOzi5GFqNhmpIn12203",
+                    "firstName": "Sayed Erfan",
+                    "email": "test@keemut.com",
+                    "age": 54,
+                    "profilePictureUrl": "eraer",
+                    "gender": "Male",
+                    "numberOfCars": 23,
+                    "useOfCar": "eraer",
+                    "createdAt": "2019-04-23T17:25:18.121Z"
+                  },
+                  "id": "dbdd3b4a-bff2-41c2-aa4b-a3b7fc4e3e35",
+                  "createdAt": "2019-04-23T17:25:19.871Z"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "451"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"1c3-eN6LamQnuCvCqml4QIZvNc9gzKE\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 23 Apr 2019 17:25:21 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Bad request, something went wrong",
+                  "errors": []
+                }
+              }
+            }
+          },
+          "security": []
+        }
+      },
+      "/dashboard/getSOCLast24H/123456789": {
+        "get": {
+          "description": "Login with tokenid from firebase, this will check if it already exists in the system, if not it will use this to login to firebase, if the idtoken is correct it will store it in the system for further use",
+          "summary": "Get Dashboard SOC Last 24H",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardGetSOCLast24H123456789Get",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TokenLoginSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "id": "Eq38IWQW36Q15LadFfE3HFJHpwR2",
+                  "firstName": "Sayed Erfan",
+                  "lastName": "Arefin",
+                  "email": "erfanjordison@gmail.com",
+                  "age": 25,
+                  "profilePictureUrl": "https://sayederfanarefin.info",
+                  "gender": "Male",
+                  "useOfCar": "tesla",
+                  "createdAt": "2019-04-07T21:17:26.113Z"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "252"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"fc-1O11LcqtiiGTC1CEN23Qg7m06R0\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Sun, 07 Apr 2019 21:26:52 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Login failed!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/details": {
+        "get": {
+          "description": "TODO: Add Description",
+          "summary": "Details",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardDetailsGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/DetailsSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "carVersion": "2019.12.1.2 5c87371",
+                  "vin": "5YJSA1E23HF174471",
+                  "carType": "models2"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "82"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"52-XrAmh52KIzGjT9h/totcnAfHhVE\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:50:20 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/stats": {
+        "get": {
+          "description": "TODO: Add Description",
+          "summary": "Stats",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardStatsGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/StatsSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "hoursDriven": "345",
+                  "trackedDistance": "234 Mi",
+                  "odometer": "26716.236389"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "74"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"4a-KCblzLRzL7CoPwRA28qhkkcmSNo\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:51:44 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/vehicleInformation": {
+        "get": {
+          "description": "TODO: Add Description",
+          "summary": "Vehicle Information",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardVehicleInformationGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/VehicleInformationSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "nickName": "Life, the Universe, and Everything",
+                  "keemutStartDate": "2019-05-03T13:32:32.841Z",
+                  "vehicleImageUrl": "caricons/tesla/models/black.png"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "146"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"92-GBN2ZaJ3QL90ARZtUJIQWWSzCfY\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:41:29 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/vehicleOptionCodes": {
+        "get": {
+          "description": "Not all optionscode has a full name. Only those optionsCode full name is available which are listed here: https://www.teslaapi.io/codes/model-s-options and https://www.teslaapi.io/codes/model-x-options",
+          "summary": "Vehicle Option Codes",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardVehicleOptionCodesGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/VehicleOptionCodesSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "optionCodes": [
+                    {
+                      "optionCode": "MS01",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "RENA",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "AF00",
+                      "optionCodeFull": " AF00"
+                    },
+                    {
+                      "optionCode": "APF0",
+                      "optionCodeFull": " Autopilot Firmware 2.0 Base"
+                    },
+                    {
+                      "optionCode": "APH2",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "APPA",
+                      "optionCodeFull": " Autopilot Hardware 1"
+                    },
+                    {
+                      "optionCode": "AU00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "BCMB",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "BP00",
+                      "optionCodeFull": " No Battery Performance"
+                    },
+                    {
+                      "optionCode": "BR03",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "BS00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "BX60",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "CDM0",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "CH05",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PBSB",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "CW00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "DCF0",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "DRLH",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "DSH5",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "DV4W",
+                      "optionCodeFull": " All-Wheel Drive Dual Motor"
+                    },
+                    {
+                      "optionCode": "FG00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "FR04",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "HP00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "IDBA",
+                      "optionCodeFull": " Dark Ash Wood D&eacute;cor"
+                    },
+                    {
+                      "optionCode": "IX00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "LP00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "ME02",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "MI01",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PF00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PI00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PK00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PS01",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "PX00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "QTSB",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "RFP2",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "SC01",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "SP00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "SR01",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "SU00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "TM00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "TP00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "TR00",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "UTAB",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "WTAS",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X002",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X003",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X008",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X011",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X014",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X021",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X025",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X026",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X028",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X031",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X037",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X040",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "X044",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "YFFC",
+                      "optionCodeFull": ""
+                    },
+                    {
+                      "optionCode": "BTX5",
+                      "optionCodeFull": " Model S 75"
+                    },
+                    {
+                      "optionCode": "COUS",
+                      "optionCodeFull": ""
+                    }
+                  ]
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"a77-ZQeZ91ly3MJOZCL/sSpIg6k1hYM\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Content-Encoding": {
+                  "type": "string",
+                  "default": "gzip"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:33:36 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                },
+                "Transfer-Encoding": {
+                  "type": "string",
+                  "default": "chunked"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/card1": {
+        "get": {
+          "description": "TODO: Add Description",
+          "summary": "Card1",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardCard1Get",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Card1Success"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "carType": "models2",
+                  "portType": "US",
+                  "color": "Black",
+                  "trimBadging": "60d",
+                  "wheelType": "AeroTurbine19",
+                  "airSuspension": false,
+                  "ludicrousMode": false
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "145"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"91-jHmYMoj/9cSVGMzybpj2h7qrPXA\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:47:09 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/dashboard/card2": {
+        "get": {
+          "description": "TODO: Add Description",
+          "summary": "Card2",
+          "tags": [
+            "Dashboard"
+          ],
+          "operationId": "DashboardCard2Get",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "vin",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Card2Success"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "steeringWheelHeater": false,
+                  "spoilerType": "None",
+                  "specialType": "base",
+                  "performanceConfig": "P3",
+                  "roofColor": "None",
+                  "thirdRowSeat": "None"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "137"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"89-7x4dqFuLVkLhcBhwDIVB4zvU/lo\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Fri, 03 May 2019 13:48:31 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/dashboard/card1?vin=5YJSA1E23HF174471",
+                  "errors": []
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Dashboard not found!",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/create": {
+        "post": {
+          "description": "TODO: Add Description",
+          "summary": "http://localhost:3000/api/scheduler/create",
+          "tags": [
+            "Schedular"
+          ],
+          "operationId": "CreatePost",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "required": true,
+              "type": "string",
+              "description": ""
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/http%3A~1~1localhost%3A3000~1api~1scheduler~1createRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/histogram/generateStats": {
+        "get": {
+          "description": "Login with tokenid from firebase, this will check if it already exists in the system, if not it will use this to login to firebase, if the idtoken is correct it will store it in the system for further use",
+          "summary": "GenerateStats (TEMP)",
+          "tags": [
+            "Temp"
+          ],
+          "operationId": "HistogramGenerateStatsGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/GetAllScatterPlotSuccess"
+                }
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"8fdc-f0ODwLNa3sq+WYyHSYTCY76wlnQ\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Content-Encoding": {
+                  "type": "string",
+                  "default": "gzip"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Mon, 08 Apr 2019 09:11:01 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                },
+                "Transfer-Encoding": {
+                  "type": "string",
+                  "default": "chunked"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/splot/all": {
+        "get": {
+          "description": "Get all scatter plot data.",
+          "summary": "Get All ScatterPlot",
+          "tags": [
+            "Scatter Plot"
+          ],
+          "operationId": "SplotAllGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/GetAllScatterPlotSuccess"
+                }
+              },
+              "examples": {
+                "application/json; charset=utf-8": [
+                  {
+                    "km": 33366,
+                    "originalRange": 98.25
+                  },
+                  {
+                    "km": 32000,
+                    "originalRange": 98
+                  },
+                  {
+                    "km": 7100,
+                    "originalRange": 97.75
+                  },
+                  {
+                    "km": 35000,
+                    "originalRange": 95.25
+                  },
+                  {
+                    "km": 27000,
+                    "originalRange": 96.21
+                  },
+                  {
+                    "km": 47352,
+                    "originalRange": 95.44
+                  },
+                  {
+                    "km": 67000,
+                    "originalRange": 96.25
+                  },
+                  {
+                    "km": 14977,
+                    "originalRange": 99.75
+                  },
+                  {
+                    "km": 3434,
+                    "originalRange": 99.5
+                  },
+                  {
+                    "km": 46000,
+                    "originalRange": 96.21
+                  },
+                  {
+                    "km": 14995,
+                    "originalRange": 99.26
+                  },
+                  {
+                    "km": 16045,
+                    "originalRange": 95.75
+                  },
+                  {
+                    "km": 30650,
+                    "originalRange": 96.72
+                  },
+                  {
+                    "km": 22850,
+                    "originalRange": 97.22
+                  },
+                  {
+                    "km": 6053,
+                    "originalRange": 99.24
+                  },
+                  {
+                    "km": 73353,
+                    "originalRange": 95.96
+                  },
+                  {
+                    "km": 18200,
+                    "originalRange": 96.21
+                  },
+                  {
+                    "km": 19800,
+                    "originalRange": 96.25
+                  },
+                  {
+                    "km": 33598,
+                    "originalRange": 97.22
+                  },
+                  {
+                    "km": 49600,
+                    "originalRange": 97.47
+                  },
+                  {
+                    "km": 17800,
+                    "originalRange": 97.47
+                  },
+                  {
+                    "km": 15300,
+                    "originalRange": 99.61
+                  },
+                  {
+                    "km": 39200,
+                    "originalRange": 96.25
+                  },
+                  {
+                    "km": 21530,
+                    "originalRange": 97
+                  },
+                  {
+                    "km": 8598,
+                    "originalRange": 97.98
+                  },
+                  {
+                    "km": 4397,
+                    "originalRange": 99.24
+                  },
+                  {
+                    "km": 24000,
+                    "originalRange": 96.47
+                  },
+                  {
+                    "km": 29481,
+                    "originalRange": 97.22
+                  },
+                  {
+                    "km": 6548,
+                    "originalRange": 97.22
+                  },
+                  {
+                    "km": 26000,
+                    "originalRange": 97.98
+                  },
+                  {
+                    "km": 22526,
+                    "originalRange": 98.74
+                  },
+                  {
+                    "km": 28600,
+                    "originalRange": 99.5
+                  },
+                  {
+                    "km": 9161,
+                    "originalRange": 97.87
+                  }
+                ]
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"475-czbk8AX+tqCIEif+jD5Y6vF0Cxg\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Content-Encoding": {
+                  "type": "string",
+                  "default": "gzip"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 16 Apr 2019 12:00:28 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                },
+                "Transfer-Encoding": {
+                  "type": "string",
+                  "default": "chunked"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/splot/all",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/histogram/get": {
+        "get": {
+          "description": "Get Histogram based of make, model, year, battery.",
+          "summary": "Get Histogram",
+          "tags": [
+            "Histogram"
+          ],
+          "operationId": "HistogramGetGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "year",
+              "in": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "description": "Year of the car released"
+            },
+            {
+              "name": "make",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": "Maker of the car"
+            },
+            {
+              "name": "model",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": "Model of the car"
+            },
+            {
+              "name": "battery",
+              "in": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "description": "Battery of the car."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/GetHistogramSuccess"
+                }
+              },
+              "examples": {
+                "application/json; charset=utf-8": [
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 26
+                  }
+                ]
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "52"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"34-N8fmf40ubTjIT6DJACIOt9cx0ew\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Wed, 17 Apr 2019 12:50:02 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/histogram/get?year=2013&make=tesla&model=Tesla%20Model%20S&battery=60",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/histogram/getAll": {
+        "get": {
+          "description": "Get Histogram data for all the entries. Right now this is recommended.",
+          "summary": "Get All Histogram data",
+          "tags": [
+            "Histogram"
+          ],
+          "operationId": "HistogramGetAllGet",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/GetAllHistogramdataSuccess"
+                }
+              },
+              "examples": {
+                "application/json; charset=utf-8": [
+                  {
+                    "priceUpper": 30000,
+                    "priceLower": 20000,
+                    "count": 1
+                  },
+                  {
+                    "priceUpper": 40000,
+                    "priceLower": 30000,
+                    "count": 5
+                  },
+                  {
+                    "priceUpper": 70000,
+                    "priceLower": 60000,
+                    "count": 5
+                  },
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 26
+                  },
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 40
+                  },
+                  {
+                    "priceUpper": 60000,
+                    "priceLower": 50000,
+                    "count": 76
+                  },
+                  {
+                    "priceUpper": 40000,
+                    "priceLower": 30000,
+                    "count": 14
+                  },
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 6
+                  },
+                  {
+                    "priceUpper": 30000,
+                    "priceLower": 20000,
+                    "count": 1
+                  },
+                  {
+                    "priceUpper": 40000,
+                    "priceLower": 30000,
+                    "count": 6
+                  },
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 1
+                  },
+                  {
+                    "priceUpper": 40000,
+                    "priceLower": 30000,
+                    "count": 2
+                  },
+                  {
+                    "priceUpper": 50000,
+                    "priceLower": 40000,
+                    "count": 2
+                  },
+                  {
+                    "priceUpper": 60000,
+                    "priceLower": 50000,
+                    "count": 1
+                  }
+                ]
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-DNS-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-XSS-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "705"
+                },
+                "ETag": {
+                  "type": "string",
+                  "default": "W/\"2c1-I39EyAcvuYCYt5LeZvBy1HQlVms\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Wed, 17 Apr 2019 12:40:52 GMT"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on GET /api/histogram/get?year=2013&make=tesla&model=Tesla%20Model%20S&battery=60",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/vehicle/register": {
+        "post": {
+          "description": "Register a user vehicle, user is picked up from the id token.",
+          "summary": "Register Vehicle",
+          "tags": [
+            "Vehicle"
+          ],
+          "operationId": "VehicleRegisterPost",
+          "deprecated": false,
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "required": true,
+              "type": "string",
+              "description": ""
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleRequest"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleSuccess"
+              },
+              "examples": {
+                "application/json; charset=utf-8": {
+                  "message": "Vehicle registered!"
+                }
+              },
+              "headers": {
+                "Server": {
+                  "type": "string",
+                  "default": "Cowboy"
+                },
+                "Connection": {
+                  "type": "string",
+                  "default": "keep-alive"
+                },
+                "Access-Control-Allow-Origin": {
+                  "type": "string",
+                  "default": "*"
+                },
+                "Strict-Transport-Security": {
+                  "type": "string",
+                  "default": "max-age=15552000; includeSubDomains"
+                },
+                "X-Dns-Prefetch-Control": {
+                  "type": "string",
+                  "default": "off"
+                },
+                "X-Frame-Options": {
+                  "type": "string",
+                  "default": "SAMEORIGIN"
+                },
+                "X-Download-Options": {
+                  "type": "string",
+                  "default": "noopen"
+                },
+                "X-Content-Type-Options": {
+                  "type": "string",
+                  "default": "nosniff"
+                },
+                "X-Xss-Protection": {
+                  "type": "string",
+                  "default": "1; mode=block"
+                },
+                "Surrogate-Control": {
+                  "type": "string",
+                  "default": "no-store"
+                },
+                "Cache-Control": {
+                  "type": "string",
+                  "default": "no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                "Pragma": {
+                  "type": "string",
+                  "default": "no-cache"
+                },
+                "Expires": {
+                  "type": "string",
+                  "default": "0"
+                },
+                "Content-Length": {
+                  "type": "string",
+                  "default": "33"
+                },
+                "Etag": {
+                  "type": "string",
+                  "default": "W/\"21-8TJ1ZIj3x7e3MD2WXD9JM++5wc0\""
+                },
+                "Vary": {
+                  "type": "string",
+                  "default": "Accept-Encoding"
+                },
+                "Date": {
+                  "type": "string",
+                  "default": "Tue, 30 Apr 2019 20:41:50 GMT"
+                },
+                "Via": {
+                  "type": "string",
+                  "default": "1.1 vegur"
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "Error",
+                  "message": "Bad request, some values were missing",
+                  "errors": []
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/RegisterVehicleUnauthorised"
+              },
+              "examples": {
+                "application/json": {
+                  "name": "AuthorizationRequiredError",
+                  "message": "Authorization is required for request on POST /api/vehicle/register",
+                  "errors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "/vehicle/delete/jhdfgnldfglnnldfglnk": {
+        "delete": {
+          "description": "Delete a registered vehicle with id in the path parameter and the user is fetched based on the given token id.",
+          "summary": "Delete Vehicle",
+          "tags": [
+            "Vehicle"
+          ],
+          "operationId": "VehicleDeleteJhdfgnldfglnnldfglnkDelete",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "UpdateUserProfileRequest": {
+        "title": "UpdateUserProfileRequest",
+        "example": {
+          "phoneNumber": "01521158411",
+          "numberOfCars": 23,
+          "carUse": "eraer",
+          "companyName": "eraer",
+          "avatar": "eraer",
+          "employeeId": "eraer",
+          "distanceUnit": "eraer",
+          "zoneId": "eraer",
+          "currency": "eraer"
+        },
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string"
+          },
+          "numberOfCars": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carUse": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "distanceUnit": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "phoneNumber",
+          "numberOfCars",
+          "carUse",
+          "companyName",
+          "avatar",
+          "employeeId",
+          "distanceUnit",
+          "zoneId",
+          "currency"
+        ]
+      },
+      "UpdateUserProfileSuccess": {
+        "title": "UpdateUserProfileSuccess",
+        "example": {
+          "generatedMaps": [],
+          "raw": []
+        },
+        "type": "object",
+        "properties": {
+          "generatedMaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "raw": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "generatedMaps",
+          "raw"
+        ]
+      },
+      "GetUserProfileSuccess": {
+        "title": "GetUserProfileSuccess",
+        "example": {
+          "phoneNumber": "eraer",
+          "email": "erfanjordison@gmail.com",
+          "firstName": "Sayed Erfan",
+          "age": 25,
+          "sex": "Male",
+          "carUse": "tesla",
+          "numberOfCars": 23,
+          "companyName": "eraer",
+          "avatar": "eraer",
+          "employeeId": "eraer",
+          "distanceUnit": "eraer",
+          "zoneId": "eraer",
+          "currency": "eraer"
+        },
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sex": {
+            "type": "string"
+          },
+          "carUse": {
+            "type": "string"
+          },
+          "numberOfCars": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "distanceUnit": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "phoneNumber",
+          "email",
+          "firstName",
+          "age",
+          "sex",
+          "carUse",
+          "numberOfCars",
+          "companyName",
+          "avatar",
+          "employeeId",
+          "distanceUnit",
+          "zoneId",
+          "currency"
+        ]
+      },
+      "CreateUserProfileRequest": {
+        "title": "CreateUserProfileRequest",
+        "example": {
+          "userId": "fDaLY95NpNSFnTm6wh6X7UmQ4N73",
+          "firstName": "Sayed Erfan",
+          "age": 54,
+          "sex": "Male",
+          "phoneNumber": "eraer",
+          "numberOfCars": 23,
+          "useOfCar": "eraer",
+          "companyName": "eraer",
+          "avatar": "eraer",
+          "employeeId": "eraer",
+          "distanceUnit": "eraer",
+          "zoneId": "eraer",
+          "currency": "eraer"
+        },
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sex": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "numberOfCars": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "useOfCar": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "distanceUnit": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "firstName",
+          "age",
+          "sex",
+          "phoneNumber",
+          "numberOfCars",
+          "useOfCar",
+          "companyName",
+          "avatar",
+          "employeeId",
+          "distanceUnit",
+          "zoneId",
+          "currency"
+        ]
+      },
+      "CreateUserProfilesuccess": {
+        "title": "CreateUserProfilesuccess",
+        "example": {
+          "avatar": "eraer",
+          "currency": "eraer",
+          "distanceUnit": "eraer",
+          "companyName": "eraer",
+          "employeeId": "eraer",
+          "zoneId": "eraer",
+          "phoneNumber": "eraer",
+          "user": {
+            "id": "RukGTw1IXzOzi5GFqNhmpIn12203",
+            "firstName": "Sayed Erfan",
+            "email": "test@keemut.com",
+            "age": 54,
+            "profilePictureUrl": "eraer",
+            "gender": "Male",
+            "numberOfCars": 23,
+            "useOfCar": "eraer",
+            "createdAt": "2019-04-23T17:25:18.121Z"
+          },
+          "id": "dbdd3b4a-bff2-41c2-aa4b-a3b7fc4e3e35",
+          "createdAt": "2019-04-23T17:25:19.871Z"
+        },
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "distanceUnit": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/definitions/User"
+          },
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "avatar",
+          "currency",
+          "distanceUnit",
+          "companyName",
+          "employeeId",
+          "zoneId",
+          "phoneNumber",
+          "user",
+          "id",
+          "createdAt"
+        ]
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "profilePictureUrl": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "numberOfCars": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "useOfCar": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "firstName",
+          "email",
+          "age",
+          "profilePictureUrl",
+          "gender",
+          "numberOfCars",
+          "useOfCar",
+          "createdAt"
+        ]
+      },
+      "TokenLoginSuccess": {
+        "title": "TokenLoginSuccess",
+        "example": {
+          "id": "Eq38IWQW36Q15LadFfE3HFJHpwR2",
+          "firstName": "Sayed Erfan",
+          "lastName": "Arefin",
+          "email": "erfanjordison@gmail.com",
+          "age": 25,
+          "profilePictureUrl": "https://sayederfanarefin.info",
+          "gender": "Male",
+          "useOfCar": "tesla",
+          "createdAt": "2019-04-07T21:17:26.113Z"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "profilePictureUrl": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "useOfCar": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "firstName",
+          "lastName",
+          "email",
+          "age",
+          "profilePictureUrl",
+          "gender",
+          "useOfCar",
+          "createdAt"
+        ]
+      },
+      "DetailsSuccess": {
+        "title": "DetailsSuccess",
+        "example": {
+          "carVersion": "2019.12.1.2 5c87371",
+          "vin": "5YJSA1E23HF174471",
+          "carType": "models2"
+        },
+        "type": "object",
+        "properties": {
+          "carVersion": {
+            "type": "string"
+          },
+          "vin": {
+            "type": "string"
+          },
+          "carType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "carVersion",
+          "vin",
+          "carType"
+        ]
+      },
+      "StatsSuccess": {
+        "title": "StatsSuccess",
+        "example": {
+          "hoursDriven": "345",
+          "trackedDistance": "234 Mi",
+          "odometer": "26716.236389"
+        },
+        "type": "object",
+        "properties": {
+          "hoursDriven": {
+            "type": "string"
+          },
+          "trackedDistance": {
+            "type": "string"
+          },
+          "odometer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hoursDriven",
+          "trackedDistance",
+          "odometer"
+        ]
+      },
+      "VehicleInformationSuccess": {
+        "title": "VehicleInformationSuccess",
+        "example": {
+          "nickName": "Life, the Universe, and Everything",
+          "keemutStartDate": "2019-05-03T13:32:32.841Z",
+          "vehicleImageUrl": "caricons/tesla/models/black.png"
+        },
+        "type": "object",
+        "properties": {
+          "nickName": {
+            "type": "string"
+          },
+          "keemutStartDate": {
+            "type": "string"
+          },
+          "vehicleImageUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nickName",
+          "keemutStartDate",
+          "vehicleImageUrl"
+        ]
+      },
+      "VehicleOptionCodesSuccess": {
+        "title": "VehicleOptionCodesSuccess",
+        "example": {
+          "optionCodes": [
+            {
+              "optionCode": "MS01",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "RENA",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "AF00",
+              "optionCodeFull": " AF00"
+            },
+            {
+              "optionCode": "APF0",
+              "optionCodeFull": " Autopilot Firmware 2.0 Base"
+            },
+            {
+              "optionCode": "APH2",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "APPA",
+              "optionCodeFull": " Autopilot Hardware 1"
+            },
+            {
+              "optionCode": "AU00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "BCMB",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "BP00",
+              "optionCodeFull": " No Battery Performance"
+            },
+            {
+              "optionCode": "BR03",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "BS00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "BX60",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "CDM0",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "CH05",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PBSB",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "CW00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "DCF0",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "DRLH",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "DSH5",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "DV4W",
+              "optionCodeFull": " All-Wheel Drive Dual Motor"
+            },
+            {
+              "optionCode": "FG00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "FR04",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "HP00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "IDBA",
+              "optionCodeFull": " Dark Ash Wood D&eacute;cor"
+            },
+            {
+              "optionCode": "IX00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "LP00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "ME02",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "MI01",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PF00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PI00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PK00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PS01",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "PX00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "QTSB",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "RFP2",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "SC01",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "SP00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "SR01",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "SU00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "TM00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "TP00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "TR00",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "UTAB",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "WTAS",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X002",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X003",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X008",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X011",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X014",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X021",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X025",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X026",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X028",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X031",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X037",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X040",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "X044",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "YFFC",
+              "optionCodeFull": ""
+            },
+            {
+              "optionCode": "BTX5",
+              "optionCodeFull": " Model S 75"
+            },
+            {
+              "optionCode": "COUS",
+              "optionCodeFull": ""
+            }
+          ]
+        },
+        "type": "object",
+        "properties": {
+          "optionCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/OptionCode"
+            }
+          }
+        },
+        "required": [
+          "optionCodes"
+        ]
+      },
+      "OptionCode": {
+        "title": "OptionCode",
+        "type": "object",
+        "properties": {
+          "optionCode": {
+            "example": "MS01",
+            "type": "string"
+          },
+          "optionCodeFull": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "optionCode",
+          "optionCodeFull"
+        ]
+      },
+      "Card1Success": {
+        "title": "Card1Success",
+        "example": {
+          "carType": "models2",
+          "portType": "US",
+          "color": "Black",
+          "trimBadging": "60d",
+          "wheelType": "AeroTurbine19",
+          "airSuspension": false,
+          "ludicrousMode": false
+        },
+        "type": "object",
+        "properties": {
+          "carType": {
+            "type": "string"
+          },
+          "portType": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "trimBadging": {
+            "type": "string"
+          },
+          "wheelType": {
+            "type": "string"
+          },
+          "airSuspension": {
+            "type": "boolean"
+          },
+          "ludicrousMode": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "carType",
+          "portType",
+          "color",
+          "trimBadging",
+          "wheelType",
+          "airSuspension",
+          "ludicrousMode"
+        ]
+      },
+      "Card2Success": {
+        "title": "Card2Success",
+        "example": {
+          "steeringWheelHeater": false,
+          "spoilerType": "None",
+          "specialType": "base",
+          "performanceConfig": "P3",
+          "roofColor": "None",
+          "thirdRowSeat": "None"
+        },
+        "type": "object",
+        "properties": {
+          "steeringWheelHeater": {
+            "type": "boolean"
+          },
+          "spoilerType": {
+            "type": "string"
+          },
+          "specialType": {
+            "type": "string"
+          },
+          "performanceConfig": {
+            "type": "string"
+          },
+          "roofColor": {
+            "type": "string"
+          },
+          "thirdRowSeat": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "steeringWheelHeater",
+          "spoilerType",
+          "specialType",
+          "performanceConfig",
+          "roofColor",
+          "thirdRowSeat"
+        ]
+      },
+      "http://localhost:3000/api/scheduler/createRequest": {
+        "title": "http://localhost:3000/api/scheduler/createRequest",
+        "example": {
+          "xyz": "dummyUserId",
+          "username": "khwaja_m_ali@hotmail.com",
+          "password": "Gaari123",
+          "vin": "5YJXCAE23JF140570"
+        },
+        "type": "object",
+        "properties": {
+          "xyz": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "vin": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "xyz",
+          "username",
+          "password",
+          "vin"
+        ]
+      },
+      "GetAllScatterPlotSuccess": {
+        "title": "GetAllScatterPlotSuccess",
+        "example": {
+          "km": 33366,
+          "originalRange": 98.25
+        },
+        "type": "object",
+        "properties": {
+          "km": {
+            "example": 33366,
+            "type": "integer",
+            "format": "int32"
+          },
+          "originalRange": {
+            "example": 98.25,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "km",
+          "originalRange"
+        ]
+      },
+      "GetHistogramSuccess": {
+        "title": "GetHistogramSuccess",
+        "example": {
+          "priceUpper": 50000,
+          "priceLower": 40000,
+          "count": 26
+        },
+        "type": "object",
+        "properties": {
+          "priceUpper": {
+            "example": 50000,
+            "type": "integer",
+            "format": "int32"
+          },
+          "priceLower": {
+            "example": 40000,
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "example": 26,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "priceUpper",
+          "priceLower",
+          "count"
+        ]
+      },
+      "GetAllHistogramdataSuccess": {
+        "title": "GetAllHistogramdataSuccess",
+        "example": {
+          "priceUpper": 30000,
+          "priceLower": 20000,
+          "count": 1
+        },
+        "type": "object",
+        "properties": {
+          "priceUpper": {
+            "example": 30000,
+            "type": "integer",
+            "format": "int32"
+          },
+          "priceLower": {
+            "example": 20000,
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "example": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "priceUpper",
+          "priceLower",
+          "count"
+        ]
+      },
+      "RegisterVehicleRequest": {
+        "title": "RegisterVehicleRequest",
+        "example": {
+          "vin": "5YJSA1E23HF174471",
+          "zoneId": "Testing zone ID",
+          "vehicleEmail": "xxx",
+          "vehiclePassword": "xxx"
+        },
+        "type": "object",
+        "properties": {
+          "vin": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "vehicleEmail": {
+            "type": "string"
+          },
+          "vehiclePassword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "vin",
+          "zoneId",
+          "vehicleEmail",
+          "vehiclePassword"
+        ]
+      },
+      "RegisterVehicleSuccess": {
+        "title": "RegisterVehicleSuccess",
+        "example": {
+          "message": "Vehicle registered!"
+        },
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "RegisterVehicleUnauthorised": {
+        "title": "RegisterVehicleUnauthorised",
+        "example": {
+          "name": "AuthorizationRequiredError",
+          "message": "Authorization is required for request on POST /api/vehicle/register",
+          "errors": []
+        },
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "message",
+          "errors"
+        ]
+      }
+    },
+    "tags": [
+      {
+        "name": "Auth",
+        "description": "Authentication related requests"
+      },
+      {
+        "name": "Configuration"
+      },
+      {
+        "name": "Dashboard"
+      },
+      {
+        "name": "Schedular"
+      },
+      {
+        "name": "Temp",
+        "description": "Temporary requests for development, do not use any of this. "
+      },
+      {
+        "name": "Scatter Plot",
+        "description": "Get Scatter Plot data"
+      },
+      {
+        "name": "Histogram",
+        "description": "Get histogram data"
+      },
+      {
+        "name": "Vehicle",
+        "description": "Create, get, delete vehicle data "
+      }
+    ]
+  }
