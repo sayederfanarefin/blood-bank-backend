@@ -18,7 +18,7 @@ script:
 
 deploy:
   provider: heroku
-  api_key: HEROKU_DEPLOY_KEY
+  api_key: $(HEROKU_DEPLOY_KEY)
   app: blood-bank-back-end
   run:
     - "npm run start:prod"
