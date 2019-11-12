@@ -16,9 +16,9 @@ script:
   - npm run test:cov
   - npm run build
 
-# deploy:
-#   provider: heroku
-#   api_key: HEROKU_DEPLOY_KEY
-#   app: blood-bank-back-end
-#   run:
-#     - "npm run start:prod"
+deploy:
+  provider: heroku
+  # api_key: HEROKU_DEPLOY_KEY
+  app: blood-bank-back-end
+  run:
+    - "npm run start:prod"
