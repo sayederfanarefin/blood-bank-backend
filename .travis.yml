@@ -20,5 +20,5 @@ deploy:
   provider: heroku
   api_key: $api_key
   app: blood-bank-back-end
-  run:
-    - "npm run start:prod"
+  # run:
+  #   - "npm run start:prod"
